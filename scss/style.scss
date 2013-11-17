@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "compass/css3/",
+		"animation",
+		"keyframes";
+
+@mixin m-position ($position, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin m-circle-loader ($size, $border-width, $color) {
+	box-sizing: border-box;
+	height: $size;
+	width: $size;
+	border: $border-width solid transparent;
+	border-top: $border-width solid $color;
+	@include border-radius($size/2 !important);
+	@include rotate(360deg);
+	@include single-animation(rotate-loader, 1s);
+}
+
+h3 { margin: 0; }
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+button { background: #efefef; }
+input, button { outline: none !important; }
+
+.hidden { display: none; }
+
+@include keyframes(rotate-loader) {
+	from { @include transform(rotate(0deg)); }
+	to   { @include transform(rotate(360deg)); }
+}
+
+.circle-loader {
+	@include m-circle-loader (35px, 3px, #333);
+}
