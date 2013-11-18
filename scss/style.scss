@@ -11,32 +11,59 @@
 	left: $left;
 }
 
-@mixin m-circle-loader ($size, $border-width, $color) {
+@mixin m-circle-loader ($size, $border-width, $color, $duration, $function) {
 	box-sizing: border-box;
 	height: $size;
 	width: $size;
 	border: $border-width solid transparent;
 	border-top: $border-width solid $color;
 	@include border-radius($size/2 !important);
-	@include rotate(360deg);
-	@include single-animation(rotate-loader, 1s);
+	@include single-animation(rotate-loader, $duration, $function);
 }
 
-h3 { margin: 0; }
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
 ul {
 	list-style-type: none;
 	padding: 0;
 }
 button { background: #efefef; }
 input, button { outline: none !important; }
+a {
+	color: #017bce;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
 
 .hidden { display: none; }
+
+body {
+	background: #eee;
+	color: #555;
+}
+
+header {
+	margin: 0 0 10px 0;
+	font-size: 2rem;
+}
+
+section {
+	display: inline-block;
+	background: #fff;
+		@include box-shadow(0 0 1px 1px #999);
+
+	h1 { border-bottom: 2px solid #017bce; }
+	h4 { margin: 10px 0;}
+	.elements-list { margin: 10px; }
+}
 
 @include keyframes(rotate-loader) {
 	from { @include transform(rotate(0deg)); }
 	to   { @include transform(rotate(360deg)); }
 }
-
-.circle-loader {
-	@include m-circle-loader (35px, 3px, #333);
-}
+.circle-loader-linear { @include m-circle-loader (35px, 3px, #017bce, 1s, linear); }
+.circle-loader-ease { @include m-circle-loader (35px, 3px, #017bce, 1s, ease ); }
+.circle-loader-ease-in { @include m-circle-loader (35px, 3px, #017bce, 1s, ease-in ); }
+.circle-loader-ease-out { @include m-circle-loader (35px, 3px, #017bce, 1s, ease-out ); }
+.circle-loader-ease-in-out { @include m-circle-loader (35px, 3px, #017bce, 1s, ease-in-out ); }

@@ -1,5 +1,6 @@
-h3 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -15,8 +16,44 @@ input, button {
   outline: none !important;
 }
 
+a {
+  color: #017bce;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .hidden {
   display: none;
+}
+
+body {
+  background: #eee;
+  color: #555;
+}
+
+header {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+}
+
+section {
+  display: inline-block;
+  background: #fff;
+  -webkit-box-shadow: 0 0 1px 1px #999999;
+  -moz-box-shadow: 0 0 1px 1px #999999;
+  box-shadow: 0 0 1px 1px #999999;
+}
+section h1 {
+  border-bottom: 2px solid #017bce;
+}
+section h4 {
+  margin: 10px 0;
+}
+section .elements-list {
+  margin: 10px;
 }
 
 @-webkit-keyframes rotate-loader {
@@ -109,22 +146,17 @@ input, button {
   }
 }
 
-.circle-loader {
+.circle-loader-linear {
   box-sizing: border-box;
   height: 35px;
   width: 35px;
   border: 3px solid transparent;
-  border-top: 3px solid #333333;
+  border-top: 3px solid #017bce;
   -webkit-border-radius: 17.5px !important;
   -moz-border-radius: 17.5px !important;
   -ms-border-radius: 17.5px !important;
   -o-border-radius: 17.5px !important;
   border-radius: 17.5px !important;
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
   -webkit-animation-name: rotate-loader;
   -moz-animation-name: rotate-loader;
   -ms-animation-name: rotate-loader;
@@ -135,6 +167,143 @@ input, button {
   -ms-animation-duration: 1s;
   -o-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.circle-loader-ease {
+  box-sizing: border-box;
+  height: 35px;
+  width: 35px;
+  border: 3px solid transparent;
+  border-top: 3px solid #017bce;
+  -webkit-border-radius: 17.5px !important;
+  -moz-border-radius: 17.5px !important;
+  -ms-border-radius: 17.5px !important;
+  -o-border-radius: 17.5px !important;
+  border-radius: 17.5px !important;
+  -webkit-animation-name: rotate-loader;
+  -moz-animation-name: rotate-loader;
+  -ms-animation-name: rotate-loader;
+  -o-animation-name: rotate-loader;
+  animation-name: rotate-loader;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.circle-loader-ease-in {
+  box-sizing: border-box;
+  height: 35px;
+  width: 35px;
+  border: 3px solid transparent;
+  border-top: 3px solid #017bce;
+  -webkit-border-radius: 17.5px !important;
+  -moz-border-radius: 17.5px !important;
+  -ms-border-radius: 17.5px !important;
+  -o-border-radius: 17.5px !important;
+  border-radius: 17.5px !important;
+  -webkit-animation-name: rotate-loader;
+  -moz-animation-name: rotate-loader;
+  -ms-animation-name: rotate-loader;
+  -o-animation-name: rotate-loader;
+  animation-name: rotate-loader;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -ms-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.circle-loader-ease-out {
+  box-sizing: border-box;
+  height: 35px;
+  width: 35px;
+  border: 3px solid transparent;
+  border-top: 3px solid #017bce;
+  -webkit-border-radius: 17.5px !important;
+  -moz-border-radius: 17.5px !important;
+  -ms-border-radius: 17.5px !important;
+  -o-border-radius: 17.5px !important;
+  border-radius: 17.5px !important;
+  -webkit-animation-name: rotate-loader;
+  -moz-animation-name: rotate-loader;
+  -ms-animation-name: rotate-loader;
+  -o-animation-name: rotate-loader;
+  animation-name: rotate-loader;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.circle-loader-ease-in-out {
+  box-sizing: border-box;
+  height: 35px;
+  width: 35px;
+  border: 3px solid transparent;
+  border-top: 3px solid #017bce;
+  -webkit-border-radius: 17.5px !important;
+  -moz-border-radius: 17.5px !important;
+  -ms-border-radius: 17.5px !important;
+  -o-border-radius: 17.5px !important;
+  border-radius: 17.5px !important;
+  -webkit-animation-name: rotate-loader;
+  -moz-animation-name: rotate-loader;
+  -ms-animation-name: rotate-loader;
+  -o-animation-name: rotate-loader;
+  animation-name: rotate-loader;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   -ms-animation-iteration-count: infinite;
