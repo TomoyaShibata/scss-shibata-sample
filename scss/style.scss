@@ -17,8 +17,15 @@
 	width: $size;
 	border: $border-width solid transparent;
 	border-top: $border-width solid $color;
-	@include border-radius($size/2 !important);
-	@include single-animation(rotate-loader, $duration, $function);
+	@include border-radius($size/1.5 !important);
+	@include single-animation(circle-loader, $duration, $function);
+}
+
+@mixin m-linear-loader ($height, $width, $color, $duration, $function) {
+	height: $height;
+	width: $width;
+	background: $color;
+	@include single-animation(linear-loader, $duration, $function);
 }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
@@ -39,31 +46,48 @@ a:hover {
 .hidden { display: none; }
 
 body {
+	font-family: 'Raleway', sans-serif;
 	background: #eee;
 	color: #555;
 }
 
 header {
-	margin: 0 0 10px 0;
+	margin: 10px;
 	font-size: 2rem;
 }
 
 section {
 	display: inline-block;
+	margin: 10px;
+	vertical-align: top;
 	background: #fff;
-		@include box-shadow(0 0 1px 1px #999);
+	@include box-shadow(0 0 1px 1px #999);
 
-	h1 { border-bottom: 2px solid #017bce; }
-	h4 { margin: 10px 0;}
+	h1 {
+		border-bottom: 2px solid #017bce;
+		text-align: center;
+	}
+	h4 { margin: 10px 0; }
 	.elements-list { margin: 10px; }
 }
 
-@include keyframes(rotate-loader) {
+@include keyframes(circle-loader) {
 	from { @include transform(rotate(0deg)); }
 	to   { @include transform(rotate(360deg)); }
 }
-.circle-loader-linear { @include m-circle-loader (35px, 3px, #017bce, 1s, linear); }
-.circle-loader-ease { @include m-circle-loader (35px, 3px, #017bce, 1s, ease ); }
-.circle-loader-ease-in { @include m-circle-loader (35px, 3px, #017bce, 1s, ease-in ); }
-.circle-loader-ease-out { @include m-circle-loader (35px, 3px, #017bce, 1s, ease-out ); }
+@include keyframes(linear-loader) {
+	from { @include transform(translate(0px)); }
+	to   { @include transform(translate(180px)); }
+}
+
+.circle-loader-linear      { @include m-circle-loader (35px, 3px, #017bce, 1s, linear); }
+.circle-loader-ease        { @include m-circle-loader (35px, 3px, #017bce, 1s, ease ); }
+.circle-loader-ease-in     { @include m-circle-loader (35px, 3px, #017bce, 1s, ease-in ); }
+.circle-loader-ease-out    { @include m-circle-loader (35px, 3px, #017bce, 1s, ease-out ); }
 .circle-loader-ease-in-out { @include m-circle-loader (35px, 3px, #017bce, 1s, ease-in-out ); }
+
+.linear-loader-linear      { @include m-linear-loader (3px, 20px, #017bce, 1s, linear); }
+.linear-loader-ease        { @include m-linear-loader (3px, 20px, #017bce, 1s, ease); }
+.linear-loader-ease-in     { @include m-linear-loader (3px, 20px, #017bce, 1s, ease-in); }
+.linear-loader-ease-out    { @include m-linear-loader (3px, 20px, #017bce, 1s, ease-out); }
+.linear-loader-ease-in-out { @include m-linear-loader (3px, 20px, #017bce, 1s, ease-in-out); }
