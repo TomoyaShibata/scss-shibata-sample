@@ -50,6 +50,8 @@ section {
   box-shadow: 0 0 1px 1px #999999;
 }
 section h1 {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
   border-bottom: 2px solid #017bce;
   text-align: center;
 }
@@ -58,6 +60,7 @@ section h4 {
 }
 section .elements-list {
   margin: 10px;
+  margin-bottom: 20px;
 }
 
 @-webkit-keyframes circle-loader {
@@ -238,6 +241,88 @@ section .elements-list {
     -o-transform: translate(180px);
     transform: translate(180px);
   }
+}
+
+.windows-loader, .windows-loader1, .windows-loader2, .windows-loader3, .windows-loader4, .windows-loader5 {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 20px 0 0 70px;
+  height: 50px;
+  width: 100px;
+  -webkit-animation-name: circle-loader;
+  -moz-animation-name: circle-loader;
+  -ms-animation-name: circle-loader;
+  -o-animation-name: circle-loader;
+  animation-name: circle-loader;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.windows-loader:after, .windows-loader1:after, .windows-loader2:after, .windows-loader3:after, .windows-loader4:after, .windows-loader5:after {
+  display: block;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #017bce;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.windows-loader1 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.windows-loader1:after {
+  height: 7px;
+  width: 7px;
+}
+
+.windows-loader2 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.windows-loader2:after {
+  height: 6px;
+  width: 6px;
+}
+
+.windows-loader3 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.windows-loader3:after {
+  height: 5px;
+  width: 5px;
+}
+
+.windows-loader4 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.windows-loader4:after {
+  height: 4px;
+  width: 4px;
+}
+
+.windows-loader5 {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.windows-loader5:after {
+  height: 3px;
+  width: 3px;
 }
 
 .circle-loader-linear {
@@ -533,4 +618,30 @@ section .elements-list {
   -ms-animation-iteration-count: infinite;
   -o-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+.icon-cross {
+  width: 25px;
+  height: 1px;
+  background: #017bce;
+  margin: 15px 0 0 4px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.icon-cross:after {
+  content: '';
+  width: 25px;
+  height: 1px;
+  background: #017bce;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }

@@ -64,11 +64,16 @@ section {
 	@include box-shadow(0 0 1px 1px #999);
 
 	h1 {
+		padding-bottom: 10px;
+		margin-bottom: 10px;
 		border-bottom: 2px solid #017bce;
 		text-align: center;
 	}
 	h4 { margin: 10px 0; }
-	.elements-list { margin: 10px; }
+	.elements-list {
+		margin: 10px;
+		margin-bottom: 20px;
+	}
 }
 
 @include keyframes(circle-loader) {
@@ -78,6 +83,57 @@ section {
 @include keyframes(linear-loader) {
 	from { @include transform(translate(0px)); }
 	to   { @include transform(translate(180px)); }
+}
+
+.windows-loader {
+	position: absolute;
+	box-sizing: border-box;
+	margin: 20px 0 0 70px;
+	height: 50px;
+	width: 100px;
+	// border: 2px solid #017bce;
+	@include single-animation(circle-loader, 1s, ease-out);
+
+	&:after {
+		display: block;
+		content: "";
+		height: 8px;
+		width: 8px;
+		background: #017bce;
+		border-radius: 10px;
+		margin: 0 auto;
+	}
+}
+
+.windows-loader1 {
+	@extend .windows-loader;
+	-webkit-animation-delay: 0.1s;
+	animation-delay: 0.1s;
+	&:after { height: 7px; width: 7px; }
+}
+.windows-loader2 {
+	@extend .windows-loader;
+	-webkit-animation-delay: 0.2s;
+	animation-delay: 0.2s;
+	&:after { height: 6px; width: 6px; }
+}
+.windows-loader3 {
+	@extend .windows-loader;
+	-webkit-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+	&:after { height: 5px; width: 5px; }
+}
+.windows-loader4 {
+	@extend .windows-loader;
+	-webkit-animation-delay: 0.4s;
+	animation-delay: 0.4s;
+	&:after { height: 4px; width: 4px; }
+}
+.windows-loader5 {
+	@extend .windows-loader;
+	-webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+	&:after { height: 3px; width: 3px; }
 }
 
 .circle-loader-linear      { @include m-circle-loader (35px, 3px, #017bce, 1s, linear); }
@@ -91,3 +147,21 @@ section {
 .linear-loader-ease-in     { @include m-linear-loader (3px, 20px, #017bce, 1s, ease-in); }
 .linear-loader-ease-out    { @include m-linear-loader (3px, 20px, #017bce, 1s, ease-out); }
 .linear-loader-ease-in-out { @include m-linear-loader (3px, 20px, #017bce, 1s, ease-in-out); }
+
+.icon-cross {
+	width: 25px;
+	height: 1px;
+	background: #017bce;
+	margin: 15px 0 0 4px;
+	@include transform(rotate(45deg));
+	&:after {
+		content: '';
+		width: 25px;
+		height: 1px;
+		background: #017bce;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		@include transform(rotate(90deg));
+	}
+}
